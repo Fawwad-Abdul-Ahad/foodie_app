@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodie/viewmodel/home/homscreen_view.dart';
 import 'package:foodie/viewmodel/home/login/login_view.dart';
+import 'package:foodie/viewmodel/home/signup/signup_view.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -14,16 +15,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      onGenerateRoute: (settings){
-        if(settings.name == '/' ){
-          return MaterialPageRoute(builder: (context)=> LoginView());
-        }
-        if(settings.name == '/home' ){
-          final String arguments = settings.arguments as String;
-          return MaterialPageRoute(builder: (context)=> HomeScreen());
-        }
-      },
 
+      // Define routes here
+      initialRoute: '/', // Set initial route to login screen
+      getPages: [
+        GetPage(name: '/', page: () => LoginView()),   // LoginView route
+        GetPage(name: '/signup', page: () => SignupView()),  // SignupView route
+        GetPage(name: '/home', page: () => HomeScreen()), // HomeScreen route
+      ],
       home: LoginView(),
     );
   }

@@ -3,12 +3,14 @@ import 'package:foodie/components/text_component.dart';
 import 'package:foodie/constants/colors.dart';
 import 'package:foodie/viewmodel/home/login/login_viewmodel.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginView extends StatelessWidget {
-   LoginView({super.key});
+class SignupView extends StatelessWidget {
+  const SignupView({super.key});
+  
+  get formKey => null;
 
-  final formKey = GlobalKey<FormState>(); // Corrected form key
   @override
   Widget build(BuildContext context) {
     TextEditingController emailController = TextEditingController();
@@ -42,7 +44,7 @@ class LoginView extends StatelessWidget {
                     children: [
                       Image.asset("assets/images/Logo.png"),
                       Text(
-                        "Deliver Favourite Food",
+                        "Deliver Food",
                         style: GoogleFonts.openSans(
                           fontSize: 22,
                           color: Colors.white,
@@ -238,16 +240,11 @@ class LoginView extends StatelessWidget {
                         fontweight: FontWeight.w500,
                         textColor: Colors.white,
                       ),
-                      InkWell(
-                        onTap: (){
-                          Get.toNamed('/SIGNUP');
-                        },
-                        child: TextWidget(
-                          text: "REGISTER",
-                          fontSize: 20,
-                          fontweight: FontWeight.w500,
-                          textColor: Colors.white,
-                        ),
+                      TextWidget(
+                        text: "REGISTER",
+                        fontSize: 20,
+                        fontweight: FontWeight.w500,
+                        textColor: Colors.white,
                       ),
                     ],
                   ),
