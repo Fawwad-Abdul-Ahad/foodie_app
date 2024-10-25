@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:foodie/components/text_component.dart';
 import 'package:foodie/constants/colors.dart';
-import 'package:foodie/viewmodel/home/login/login_viewmodel.dart';
+// import 'package:foodie/viewmodel/home/login/login_viewmodel.dart';
+import 'package:foodie/viewmodel/signup/signup_viewmodel.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SignupView extends StatelessWidget {
   const SignupView({super.key});
-  
+
   get formKey => null;
 
   @override
   Widget build(BuildContext context) {
     TextEditingController emailController = TextEditingController();
     TextEditingController passController = TextEditingController();
-    LoginViewController controller = Get.put(LoginViewController());
+    TextEditingController nameController = TextEditingController();
+
+    SignupViewController controller = Get.put(SignupViewController());
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height; // Corrected typo
 
@@ -44,7 +47,7 @@ class SignupView extends StatelessWidget {
                     children: [
                       Image.asset("assets/images/Logo.png"),
                       Text(
-                        "Deliver Food",
+                        "Deliver Favourite Food",
                         style: GoogleFonts.openSans(
                           fontSize: 22,
                           color: Colors.white,
@@ -78,7 +81,7 @@ class SignupView extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "Login",
+                                "Signup",
                                 style: GoogleFonts.openSans(
                                   fontSize: 28,
                                   color: Colors.white,
@@ -86,6 +89,39 @@ class SignupView extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(height: screenHeight * 0.05),
+                              TextFormField(
+                                controller: nameController,
+                                style: GoogleFonts.openSans(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                ),
+                                decoration: InputDecoration(
+                                  hintText: 'username',
+                                  hintStyle: GoogleFonts.openSans(
+                                    color: Colors.white,
+                                  ),
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Colors.white,
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.white),
+                                  ),
+                                  border: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Colors.white,
+                                      width: 2,
+                                    ),
+                                  ),
+                                ),
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return "Email can't be empty";
+                                  }
+                                  return null;
+                                },
+                              ),
+                              SizedBox(height: screenHeight * 0.03),
                               TextFormField(
                                 controller: emailController,
                                 style: GoogleFonts.openSans(
@@ -212,7 +248,8 @@ class SignupView extends StatelessWidget {
                                       Image.asset(
                                           "assets/images/facebook_icon.png"),
                                       SizedBox(width: screenWidth * 0.05),
-                                      Image.asset('assets/images/google_icon.png'),
+                                      Image.asset(
+                                          'assets/images/google_icon.png'),
                                     ],
                                   ),
                                 ),
@@ -240,11 +277,16 @@ class SignupView extends StatelessWidget {
                         fontweight: FontWeight.w500,
                         textColor: Colors.white,
                       ),
-                      TextWidget(
-                        text: "REGISTER",
-                        fontSize: 20,
-                        fontweight: FontWeight.w500,
-                        textColor: Colors.white,
+                      InkWell(
+                        onTap: (){
+                          Get.back();
+                        },
+                        child: TextWidget(
+                          text: "SIGNIN",
+                          fontSize: 20,
+                          fontweight: FontWeight.w500,
+                          textColor: Colors.white,
+                        ),
                       ),
                     ],
                   ),

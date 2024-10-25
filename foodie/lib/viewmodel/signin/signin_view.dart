@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:foodie/components/text_component.dart';
 import 'package:foodie/constants/colors.dart';
-import 'package:foodie/viewmodel/home/login/login_viewmodel.dart';
+import 'package:foodie/viewmodel/signin/signin_viewmodel.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 
 class LoginView extends StatelessWidget {
    LoginView({super.key});
@@ -240,7 +241,7 @@ class LoginView extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: (){
-                          Get.toNamed('/SIGNUP');
+                          Get.toNamed('/signup');
                         },
                         child: TextWidget(
                           text: "REGISTER",

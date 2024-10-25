@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:foodie/viewmodel/home/homscreen_view.dart';
-import 'package:foodie/viewmodel/home/login/login_view.dart';
-import 'package:foodie/viewmodel/home/signup/signup_view.dart';
+import 'package:foodie/tabbar/tabbar.dart';
+import 'package:foodie/viewmodel/home1/homscreen_view.dart';
+import 'package:foodie/viewmodel/signin/signin_view.dart';
+import 'package:foodie/viewmodel/signup/signup_view.dart';
+
 import 'package:get/get.dart';
 
 void main() {
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/signup', page: () => SignupView()),  // SignupView route
         GetPage(name: '/home', page: () => HomeScreen()), // HomeScreen route
       ],
-      home: LoginView(),
+      home: TabBarViewScreen(),
     );
   }
 }
