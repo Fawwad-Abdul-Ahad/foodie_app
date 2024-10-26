@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:foodie/tabbar/tabbar_controller.dart';
+import 'package:foodie/viewmodel/restaurant/restaurant_view.dart';
+import 'package:foodie/viewmodel/tabbar/tabbar_controller.dart';
 import 'package:foodie/viewmodel/home1/homscreen_view.dart';
 import 'package:get/get.dart';
 
@@ -22,9 +23,9 @@ class TabBarViewScreen extends StatelessWidget {
       }),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: const Color.fromARGB(82, 57, 36, 110),  // Custom background color
+        backgroundColor: const Color.fromARGB(188, 0, 0, 0),  // Custom background color
         selectedItemColor: const Color.fromARGB(255, 255, 255, 255), // Set the selected item color here
-        unselectedItemColor: const Color.fromARGB(255, 35, 29, 112),
+        unselectedItemColor: const Color.fromRGBO(136, 127, 252, 1),
         currentIndex: controller.selectedTab.value,
         onTap: (index) {
           controller.changeTab(index);
