@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:foodie/viewmodel/home1/productModel.dart';
 
 class RestaurantView extends StatelessWidget {
-  const RestaurantView({super.key});
-
+  RestaurantView({super.key,required this.categoryData,required this.productModelData});
+  productModel categoryData;
+  Map productModelData;
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
-
+    
     return Scaffold(
       body: Stack(
         children: [

@@ -6,6 +6,7 @@ import 'package:foodie/viewmodel/home1/productModel.dart';
 import 'package:foodie/viewmodel/home1/categories_list.dart';
 import 'package:foodie/viewmodel/home1/widget/category_widget.dart';
 import 'package:foodie/viewmodel/home1/widget/product_order.dart';
+import 'package:foodie/viewmodel/restaurant/restaurant_view.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -197,7 +198,7 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-
+                
                 SizedBox(
                   height: 150,
                   child: ListView.builder(
@@ -206,34 +207,36 @@ class HomeScreen extends StatelessWidget {
                       itemBuilder: (context, index) {
                         final data = categories[index];
                         return GestureDetector(
-                          // onTap: () {
-                          //   Get.to(ResturantView(
-                          //     categoryData: controller.products[index],
-                          //     restaurantData: data,
-                          //   ));
-                          // },
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 15),
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: 90,
-                                  width: 80,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                        color: Colors.deepPurpleAccent),
-                                    color: const Color.fromARGB(255, 31, 7, 71),
-                                    borderRadius: BorderRadius.circular(10),
+                          onTap: () {
+                            Get.to(RestaurantView(
+                              categoryData: controller.products[index],
+                              productModelData: data,
+                            ));
+                          },
+                          child: Container(
+                            child: Padding(
+                              padding: const EdgeInsets.only(left:14),
+                              child: Column(
+                                children: [
+                                  Container(
+                                    height: 90,
+                                    width: 80,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                          color: const Color.fromARGB(255, 165, 136, 244)),
+                                      color: const Color.fromARGB(255, 31, 7, 71),
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Image.asset('${data['icon']}'),
                                   ),
-                                  child: Image.asset('${data['icon']}'),
-                                ),
-                                const SizedBox(height: 8),
-                                TextWidget(
-                                    text: data['name'],
-                                    fontSize: 20,
-                                    fontweight: FontWeight.bold,
-                                    textColor: Colors.white),
-                              ],
+                                  const SizedBox(height: 8),
+                                  TextWidget(
+                                      text: data['name'],
+                                      fontSize: 18,
+                                      fontweight: FontWeight.bold,
+                                      textColor: Colors.white),
+                                ],
+                              ),
                             ),
                           ),
                         );

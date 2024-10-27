@@ -21,7 +21,17 @@ List categories = [
   },
     {
     "name":"Chinese",
-    "icon":"assets/images/chinese.png",
+    "icon":"assets/images/sushi.png",
+    "image":"assets/images/resturant_dish.png",
+    "restaurantName":"Kinka Izakaya",
+    "restaurantAddress":"2972 Westheimar Rd. Santa",
+    "deliveryFee":"3.99",
+    "serviceFee":"2.50",
+    "totalFee":"6.49",
+  },
+   {
+    "name":"Mexican",
+    "icon":"assets/images/mexican.png",
     "image":"assets/images/resturant_dish.png",
     "restaurantName":"Kinka Izakaya",
     "restaurantAddress":"2972 Westheimar Rd. Santa",
