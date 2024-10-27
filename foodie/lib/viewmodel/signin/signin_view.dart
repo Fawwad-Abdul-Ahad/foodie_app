@@ -187,7 +187,7 @@ class LoginView extends StatelessWidget {
                                 ),
                                 onPressed: () {
                                   if (formKey.currentState!.validate()) {
-                                    // Perform login action
+                                    controller.Login(emailController.text, passController.text);
                                   }
                                 },
                                 child: Text(

@@ -2,7 +2,7 @@ List categories = [
   {
     "name":"Burgers",
     "icon":"assets/images/burger.png",
-    "image":"assets/images/burger-restaurant.jpg",
+    "image":"assets/images/burger_restaurant.jpg",
     "restaurantName":"Burgers Cafe",
     "restaurantAddress":"Times Square New York",
     "deliveryFee":"2.99",
@@ -12,8 +12,8 @@ List categories = [
     {
     "name":"Desserts",
     "icon":"assets/images/cake.png",
-    "image":"assets/images/dessert-restaurant.jpg",
-    "restaurantName":"14 Chain",
+    "image":"assets/images/desert_restaurant.jpg",
+    "restaurantName":"Deserts Mania",
     "restaurantAddress":"2912 Westheimar Rd.",
     "deliveryFee":"4.99",
     "serviceFee":"3.50",
@@ -22,8 +22,8 @@ List categories = [
     {
     "name":"Chinese",
     "icon":"assets/images/sushi.png",
-    "image":"assets/images/resturant_dish.png",
-    "restaurantName":"Kinka Izakaya",
+    "image":"assets/images/chinese_restaurant.jpg",
+    "restaurantName":"Chinese Restaurant",
     "restaurantAddress":"2972 Westheimar Rd. Santa",
     "deliveryFee":"3.99",
     "serviceFee":"2.50",

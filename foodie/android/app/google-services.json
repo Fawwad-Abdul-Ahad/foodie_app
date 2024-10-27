@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "428843454491",
+    "project_id": "restaurantapp-5ad53",
+    "storage_bucket": "restaurantapp-5ad53.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428843454491:android:fc71e9e3bfe26bc8c3e8be",
+        "android_client_info": {
+          "package_name": "com.foodie.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-RNt00i4j0pDrur6-pd2_MwgAHspxkx0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

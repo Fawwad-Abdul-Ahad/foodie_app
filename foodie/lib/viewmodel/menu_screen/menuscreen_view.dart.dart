@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:foodie/components/text_component.dart';
 import 'package:foodie/viewmodel/menu_screen/addtocart_items.dart';
 import 'package:foodie/viewmodel/menu_screen/menuscreen_viewmodel.dart';
+import 'package:foodie/viewmodel/orderscreen/orderscreen_view.dart';
+import 'package:foodie/viewmodel/orderscreen/orderscreen_viewmodel.dart';
 import 'package:get/get.dart';
 
 class MenuScreenView extends StatelessWidget {
@@ -18,6 +20,7 @@ class MenuScreenView extends StatelessWidget {
       required this.price});
 
   final controller = Get.put(MenuScreenViewModel());
+  final cartController = Get.put(CartController (),permanent: true);
 
 
   @override
@@ -157,24 +160,28 @@ class MenuScreenView extends StatelessWidget {
           ),
         ),
       ),
-      // bottomNavigationBar: BottomAppBar(
-      //   color: Colors.black,
-      //   child: ElevatedButton(
-      //     onPressed: () {
-      //       var item = CartItem(
-      //         name: name,
-      //         price: price,
-      //         image: image,
-      //         quantity: (controller.quantity.value),
-      //       );
-      //       cartController.addItem(item,
-      //           initialQuantity: controller.quantity.value);
-      //       controller.quantity.value = 1;
-      //       Get.to(OrderDetailView());
-      //     },
-      //     title: 'Add to Basket',
-      //   ),
-      // ),
+      bottomNavigationBar: BottomAppBar(
+        
+        color: Colors.black,
+        child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromARGB(255, 48, 33, 87)
+                      ),
+          onPressed: () {
+            var item = CartItem(
+              name: name,
+              price: price,
+              image: image,
+              quantity: (controller.quantity.value),
+            );
+            cartController.addItem(item,
+                initialQuantity: controller.quantity.value);
+            controller.quantity.value = 1;
+            Get.to(OrderDetailView());
+          },
+          child: Text("Add to Basket"),
+        ),
+      ),
     );
   }
 }

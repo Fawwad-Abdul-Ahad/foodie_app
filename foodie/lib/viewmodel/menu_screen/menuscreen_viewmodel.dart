@@ -5,6 +5,7 @@ class MenuScreenViewModel extends GetxController{
   RxBool udonChecked = false.obs;
   RxInt quantity = 1.obs;
   var cartItems = <CartItem>[].obs;
+  var CartList = [].obs;
 
   addQuantity() {
     quantity++;
@@ -14,5 +15,16 @@ class MenuScreenViewModel extends GetxController{
     if (quantity > 0) {
       quantity--;
     } else {}
+  }
+
+  addtoCartFunc(String name,String price,String image,int qty){
+    CartList.add({
+      'name':name,
+      'price':price,
+      'Image':image,
+      'qty':qty,
+    }
+    );
+
   }
 }

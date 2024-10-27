@@ -209,8 +209,8 @@ class HomeScreen extends StatelessWidget {
                         return GestureDetector(
                           onTap: () {
                             Get.to(RestaurantView(
-                              categoryData: controller.products[index],
-                              productModelData: data,
+                              ProductData: controller.products[index],
+                              CategoryDataMap: data,
                             ));
                           },
                           child: Container(
